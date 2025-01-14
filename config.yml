@@ -1,0 +1,42 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+# Database configurations
+database:
+  driverClass: org.postgresql.Driver
+  user: your_username
+  password: your_password
+  url: jdbc:postgresql://localhost:5432/your_database
+
+# Logging configurations
+logging:
+  level: INFO
+  loggers:
+    com.example: DEBUG
+  appenders:
+    - type: console
+      threshold: INFO
+      target: stdout
+    - type: file
+      threshold: WARN
+      currentLogFilename: ./logs/microservice.log
+      archivedLogFilenamePattern: ./logs/microservice-%d.log
+      archivedFileCount: 7
+
+# Application-specific configurations
+application:
+  name: my-microservice
+  version: 1.0.0
+  environment: development
+  maxRequestSizeMb: 10
+
+# Third-party API settings
+externalApi:
+  baseUrl: https://api.example.com
+  timeoutMs: 5000
+  apiKey: YOUR_API_KEY

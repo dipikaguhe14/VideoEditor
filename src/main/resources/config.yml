@@ -34,9 +34,3 @@ application:
   version: 1.0.0
   environment: development
   maxRequestSizeMb: 10
-
-# Third-party API settings
-externalApi:
-  baseUrl: https://api.example.com
-  timeoutMs: 5000
-  apiKey: YOUR_API_KEY
